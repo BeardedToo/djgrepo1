@@ -10,12 +10,17 @@
 		<h1><a href="">A Blog</a></h1>
 	</div>
 	<div>
-		<p>Published: date</p>
-		<h2><a href="">Title</a></h2>
-		<p>Post text</p>
+		{% for post in posts %}
+			<h2><a href="">{{ post }}</a></h2>
+			<p>Published: {{ post.published_date }}</p>
+			<p>{{ post.text|linebreaksbr }}</p>
+		{% endfor %}
 	</div>
+	<hr>
 	<div>
 		<p>All posts: {{ posts }}</p>
+	</div>
+	<div>
 	</div>
 </body>
 

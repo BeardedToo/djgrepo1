@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
-from blog1.models import Post # TODO: wildcard this, both app and model
+from .models import *
 
 # Create your views here.
 
