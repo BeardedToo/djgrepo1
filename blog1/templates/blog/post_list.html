@@ -1,40 +1,12 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>Post List - A Blog</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="{% static 'css/blog.css' %}">
-	<link href="http://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-	<div class="page-header">
-		<h1><a href="">A Blog</a></h1>
-	</div>
-	<div class="content container">
-		<div class="row">
-			<div class="col-md-8">
-				{% for post in posts %}
-					<div class="post">
-						<h1><a href="">{{ post.title }}</a></h1>
-						<div class="date">
-							<p>published: {{ post.published_date }}</p>
-						</div>
-						<p>{{ post.text|linebreaksbr }}</p>
-					</div>
-				{% endfor %}
+{% extends 'blog/base.html' %}
+{% block content %}
+	{% for post in posts %}
+		<div class="post">
+			<h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
+			<div class="date">
+				<p>published: {{ post.published_date }}</p>
 			</div>
+			<p>{{ post.text|linebreaksbr }}</p>
 		</div>
-	</div>
-	<hr>
-	<div>
-		<p>All posts: {{ posts }}</p>
-	</div>
-	<div>
-	</div>
-</body>
-
-</html>
+	{% endfor %}
+{% endblock %}

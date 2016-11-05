@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+	<div class="post">
+		{% if post.published_date <= now %}
+		<h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
+		<div class="date">
+			<p>published: {{ post.published_date }}</p>
+		</div>
+		<p>{{ post.text|linebreaksbr }}</p>
+		{% else %}
+		<p>Post {{ pk }}is yet to be published.</p>
+		{% endif %}
+	</div>
+{% endblock %}
