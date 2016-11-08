@@ -1,8 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 	<div class="post">
-		{% if post.published_date <= now %}
-		<h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a></h1>
+		{% if post.published_date <= now or user == 'admin'%}
+
+		<h1><a href="{% url 'post_detail' pk=post.pk%}">{{ post.title }}</a>{% if user.is_authenticated %}<a class="btn btndefault" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>{% endif %}</h1>
 		<div class="date">
 			<p>published: {{ post.published_date }}</p>
 		</div>
