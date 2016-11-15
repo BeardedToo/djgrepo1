@@ -1,6 +1,6 @@
 h1 a, h2 a, h3 a, h4 a, h5 a {
     color: #FCA205;
-    font-family: 'Merriweather';
+    font-family: 'Merriweather', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 
 .page-header {
@@ -15,12 +15,24 @@ h1 a, h2 a, h3 a, h4 a, h5 a {
     text-decoration: none;
 }
 
+.post {
+    margin-bottom: 70px;
+}
+
+.post h1 a, .post h1 a:visited,
+.post h2 a, .post h2 a:visited,
+.post h3 a, .post h3 a:visited,
+.post h4 a, .post h4 a:visited,
+.post h5 a, .post h5 a:visited
+{
+    color: #C98104;
+}
 .content {
     margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Merriweather', TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif;
 }
 
 .date {
@@ -46,10 +58,3 @@ h1, h2, h3, h4 {
     margin-right: 20px;
 }
 
-.post {
-    margin-bottom: 70px;
-}
-
-.post h1 a, .post h1 a:visited {
-    color: #000000;
-}
